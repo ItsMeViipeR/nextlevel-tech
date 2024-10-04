@@ -52,7 +52,12 @@ export const OgImage = ({ post, url }: OgImageProps) => {
             marginTop: "auto",
           }}
         >
-          <img alt="x" src={"/logo.jpg"} width={64} height={64} />
+          <img
+            alt="x"
+            src={"https://nxtlvltech.vercel.app/logo.jpg"}
+            width={64}
+            height={64}
+          />
           <p tw="text-4xl m-0">ViipeR</p>
         </div>
       </div>
