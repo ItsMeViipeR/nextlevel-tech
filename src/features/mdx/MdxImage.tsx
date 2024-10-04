@@ -1,15 +1,13 @@
-import { YouTubeEmbed } from "@next/third-parties/google";
-
-export const MdxYouTube = ({
-  id,
+export const MdxImage = ({
+  url,
   description,
 }: {
-  id: string;
+  url: string;
   description?: string;
 }) => {
   return (
     <>
-      <YouTubeEmbed videoid={id} />
+      <img src={url} alt="Test" />
       {description && (
         <span className="text-gray-500 text-sm">{description}</span>
       )}
