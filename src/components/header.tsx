@@ -7,7 +7,7 @@ export const Header = () => {
         <span className="text-primary">Next Level Tech</span>
       </Link>
       <div className="ml-auto"></div>
-      <Link href="/" className="text-primary">
+      <Link href="/posts" className="text-primary">
         Posts
       </Link>
     </header>
