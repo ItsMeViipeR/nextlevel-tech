@@ -10,13 +10,13 @@ export default function HomePage() {
         margin: "0 auto",
       }}
     >
-      <header style={{ textAlign: "center", marginBottom: "50px" }}>
+      <div style={{ textAlign: "center", marginBottom: "50px" }}>
         <h1 style={{ fontSize: "3em" }}>Next Level Tech</h1>
         <p style={{ fontSize: "1.2em" }}>
           Bienvenue sur le blog Next Level Tech, où nous explorons les dernières
           innovations technologiques.
         </p>
-      </header>
+      </div>
       <main>
         <section style={{ marginBottom: "30px" }}>
           <h2 style={{ fontSize: "2em" }}>Derniers Articles</h2>
@@ -33,18 +33,6 @@ export default function HomePage() {
           </p>
         </section>
       </main>
-      <footer
-        style={{
-          textAlign: "center",
-          marginTop: "50px",
-          borderTop: "1px solid #ccc",
-          paddingTop: "20px",
-        }}
-      >
-        <p style={{ fontSize: "1em" }}>
-          &copy; 2023 Next Level Tech. Tous droits réservés.
-        </p>
-      </footer>
     </div>
   );
 }
