@@ -10,6 +10,7 @@ const PostSchema = z.object({
   description: z.string(),
   publishedAt: z.coerce.string(),
   published: z.boolean().optional().default(false),
+  lastEdited: z.coerce.string().optional(),
 });
 
 export type Post = z.infer<typeof PostSchema> & {

@@ -1,5 +1,6 @@
 import { Mdx } from "@/features/mdx/Mdx";
 import { getPost } from "@/lib/posts";
+import { formatDate } from "@/lib/utils";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -34,7 +35,12 @@ export default async function RoutePage(props: { params: { slug: string } }) {
     <div className="prose prose-invert prose-sm lg:prose-lg">
       <div className="flex items-center gap-2">
         <p className="text-xs text-muted-foreground">
-          {new Date(post.publishedAt).toLocaleDateString()}
+          <span>
+            Le {formatDate(post.publishedAt)}{" "}
+            {post.lastEdited && post.lastEdited !== post.publishedAt
+              ? `– Modifié le ${formatDate(post.lastEdited)}`
+              : ""}
+          </span>
         </p>
       </div>
       <h1>{post.title}</h1>
