@@ -3,6 +3,7 @@ import { getPost } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ViewCount } from "./ViewCount";
 
 export const dynamic = "force-static";
 
@@ -42,6 +43,7 @@ export default async function RoutePage(props: { params: { slug: string } }) {
               : ""}
           </span>
         </p>
+        <ViewCount slug={props.params.slug} />
       </div>
       <h1>{post.title}</h1>
       <Mdx>{post.content}</Mdx>
