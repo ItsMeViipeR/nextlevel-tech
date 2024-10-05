@@ -38,11 +38,13 @@ export default async function RoutePage(props: { params: { slug: string } }) {
         <p className="text-xs text-muted-foreground">
           <span>Le {formatDate(post.publishedAt)} </span>
         </p>
-        {"–"}
         {post.lastEdited && post.lastEdited !== post.publishedAt ? (
-          <p className="text-xs text-muted-foreground">{`Modifié le ${formatDate(
-            post.lastEdited
-          )}`}</p>
+          <>
+            <span> – </span>
+            <p className="text-xs text-muted-foreground">{`Modifié le ${formatDate(
+              post.lastEdited
+            )}`}</p>
+          </>
         ) : (
           <></>
         )}
