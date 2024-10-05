@@ -33,7 +33,7 @@ export default async function RoutePage(props: { params: { slug: string } }) {
   }
 
   return (
-    <div className="prose prose-invert prose-sm lg:prose-lg prose-img:mb-0">
+    <div className="prose prose-invert prose-sm lg:prose-lg prose-img:mb-0 prose-pre:mt-0">
       <div className="flex items-center gap-2">
         <p className="text-xs text-muted-foreground">
           <span>Le {formatDate(post.publishedAt)} </span>
