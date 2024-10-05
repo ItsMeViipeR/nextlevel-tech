@@ -36,13 +36,17 @@ export default async function RoutePage(props: { params: { slug: string } }) {
     <div className="prose prose-invert prose-sm lg:prose-lg prose-img:mb-0">
       <div className="flex items-center gap-2">
         <p className="text-xs text-muted-foreground">
-          <span>
-            Le {formatDate(post.publishedAt)}{" "}
-            {post.lastEdited && post.lastEdited !== post.publishedAt
-              ? `– Modifié le ${formatDate(post.lastEdited)}`
-              : ""}
-          </span>
+          <span>Le {formatDate(post.publishedAt)} </span>
         </p>
+        {"–"}
+        {post.lastEdited && post.lastEdited !== post.publishedAt ? (
+          <p className="text-xs text-muted-foreground">{`Modifié le ${formatDate(
+            post.lastEdited
+          )}`}</p>
+        ) : (
+          <></>
+        )}
+        <span> – </span>
         <ViewCount slug={props.params.slug} />
       </div>
       <h1>{post.title}</h1>

@@ -7,7 +7,6 @@ export type MdxPreProps = ComponentPropsWithoutRef<"pre"> & {
 };
 
 export const MdxPre = ({ children, className, ...props }: MdxPreProps) => {
-  console.log({ props });
   return (
     <div className="mb-4 rounded-t-lg bg-accent">
       <div className="flex items-center gap-2 px-2 py-1.5">
