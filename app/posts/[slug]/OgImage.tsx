@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { Post } from "@/lib/posts";
+import { formatDate } from "@/lib/utils";
 
 export type OgImageProps = {
   post: Post;
@@ -40,9 +41,7 @@ export const OgImage = ({ post, url }: OgImageProps) => {
         >
           Next Level Tech
         </p>
-        <p tw="text-xl m-0 mt-12">
-          {new Date(post.publishedAt).toLocaleDateString()}
-        </p>
+        <p tw="text-xl m-0 mt-12">{formatDate(post.publishedAt)}</p>
         <p tw="text-6xl m-0 mt-0">{post.title}</p>
         <div
           style={{
