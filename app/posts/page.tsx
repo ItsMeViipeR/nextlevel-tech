@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getPosts } from "@/lib/posts";
+import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
 export default async function Home() {
@@ -16,7 +17,7 @@ export default async function Home() {
         <Card key={post.slug}>
           <CardHeader>
             <p className="text-xs text-muted-foreground">
-              {new Date(post.publishedAt).toLocaleDateString()}
+              {formatDate(post.publishedAt)}
             </p>
             <CardTitle>{post.title}</CardTitle>
             <CardDescription>{post.description}</CardDescription>
