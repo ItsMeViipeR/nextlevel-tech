@@ -1,0 +1,148 @@
+---
+title: "Pourquoi utiliser TypeScript avec Next.js en 2024 ?"
+description: "Découvrez pourquoi utiliser TypeScript avec Next.js en 2024."
+publishedAt: "2024-10-07"
+published: true
+---
+
+<Img
+  url="https://www.sudshekhar.com/_next/image?url=%2Fimages%2Fposts%2Fconvert-nextjs-to-typescript.jpg&w=2048&q=75"
+  description="TypeScript x Next.js"
+/>
+
+---
+
+## Introduction
+
+JavaScript est un langage de programmation orienté web très populaire et très puissant depuis l'arrivée de Node.js en 2009.
+Cependant, JavaScript est un langage non typé ce qui peut poser de nombreux problèmes lors du développement et du déploiment
+d'applications web complexes.
+
+En 2012, Microsoft crée TypeScript, un sur-ensemble (`superset`) de JavaScript qui ajoute le typage statique et plusieurs
+fonctionnalités supplémentaires au langage. TypeScript est devenu très populaire dans la communauté des développeurs web
+et est largement utilisé dans de nombreux projets open-source et commerciaux.
+
+Next.js est un framework React très populaire pour le développement d'applications web modernes.
+Next.js est basé sur React et fournit de nombreuses fonctionnalités supplémentaires pour faciliter le développement d'applications
+web complexes telles que le rendu côté serveur, le routage dynamique, le pré-rendu statique, etc.
+
+Dans cet article, nous allons explorer pourquoi utiliser TypeScript avec Next.js en 2024 et comment cela peut améliorer la qualité
+et la maintenabilité de vos applications web.
+
+---
+
+## TypeScript – Un vrai plus pour la qualité de votre code
+
+Le typage statique de TypeScript permet de détecter de nombreuses erreurs de programmation avant l'exécution du code.
+Cela permet de réduire les bugs et d'améliorer la qualité du code en détectant les erreurs de typage, les erreurs de syntaxe, etc.
+
+En utilisant TypeScript pour le développement de vos applications web avec Next.js, vous bénéficiez des avantages de TypeScript
+avec la facilité de développement de JavaScript.
+
+---
+
+## TypeScript – Une meilleure maintenabilité du code
+
+Avec son typage statique, TypeScript rend le code source de vos applications web plus lisible et plus maintenable sur le long
+terme et en opensource. Les types permettent de documenter le code et de faciliter la compréhension des développeurs
+qui travaillent sur le projet. Cela permet également de réduire le temps nécessaire pour comprendre et maintenir le code.
+
+En utilisant TypeScript avec Next.js vous pouvez améliorer la maintenabilité de vos applications web et faciliter
+la collaboration entre les membres de l'équipe de développement avec la possibilité de définir des interfaces et des types.
+
+Exemple de code TypeScript avec Next.js :
+
+```tsx
+// app/posts/[slug]/ViewCount.tsx
+
+"use client";
+
+import useSwr from "swr";
+import { incrementViews } from "./view.action";
+
+export const ViewCount = ({ slug }: { slug: string }) => {
+  const viewCount = useSwr(`/viewcount/${slug}`, async () => {
+    return incrementViews(slug);
+  });
+
+  if (!viewCount.data) {
+    return null;
+  }
+
+  return (
+    <div className="flex items-center gap-2 text-sm">
+      <span className="text-muted-foreground">{viewCount.data.views} vues</span>
+    </div>
+  );
+};
+```
+
+Dans ce code, nous utilisons TypeScript pour définir le type de la propriété `slug`.
+Cela permet de garantir que le code est correctement typé
+et de réduire les erreurs de programmation. TypeScript permet également d'utiliser des outils tels que `ESLint`
+et `Prettier` pour formater automatiquement le code et détecter les erreurs de style.
+
+L'équivalent en JavaScript pur serait :
+
+```jsx
+// app/posts/[slug]/ViewCount.jsx
+
+import useSwr from "swr";
+import { incrementViews } from "./view.action";
+
+export const ViewCount = ({ slug }) => {
+  const viewCount = useSwr(`/viewcount/${slug}`, async () => {
+    return incrementViews(slug);
+  });
+
+  if (!viewCount.data) {
+    return null;
+  }
+
+  return (
+    <div className="flex items-center gap-2 text-sm">
+      <span className="text-muted-foreground">{viewCount.data.views} vues</span>
+    </div>
+  );
+};
+```
+
+Nous pouvons voir qu'en JavaScript pur, le code est sensiblement le même sauf que nous ne connaissons pas
+le type de la propriété `slug` ce qui peut poser des problèmes lors de la maintenance du code.
+
+---
+
+## TypeScript – Un bon choix pour les débutants ?
+
+TypeScript a beau beaucoup ressembler à JavaScript, sa courbe d'apprentissage peut être plus raide pour les débutants.
+
+Cependant, TypeScript offre de nombreux avantages en termes de qualité de code, de maintenabilité et de collaboration
+entre les membres de l'équipe de développement. Il est donc recommandé d'apprendre TypeScript pour les développeurs
+qui souhaitent améliorer leurs compétences en développement web.
+
+En utilisant TypeScript avec Next.js, les débutants peuvent bénéficier des avantages de TypeScript tout en apprenant
+les bases du développement web avec Next.js.
+
+---
+
+## Conclusion
+
+L'utilisation de TypeScript avec Next.js est un choix judicieux pour le développement d'applications web modernes en 2024 grâce
+à ses avantages en termes de qualité de code, de maintenabilité et de collaboration entre les membres de l'équipe
+de développement.
+
+En utilisant TypeScript avec Next.js, vous pouvez améliorer la qualité de votre code, réduire les bugs,
+faciliter la maintenance et accélérer le développement de vos applications web.
+
+Néanmoins, en tant que débutant, la courbe d'apprentissage de TypeScript peut être plus raide, mais les avantages
+de TypeScript en termes de qualité de code et de maintenabilité en valent la peine.
+
+---
+
+## Ressources
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TypeScript with Next.js](https://nextjs.org/docs/basic-features/typescript)
+
+> <u>_Les resources sont en anglais._</u>
